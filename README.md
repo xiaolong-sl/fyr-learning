@@ -1,2 +1,0 @@
-# fyr-learning
-fyr
