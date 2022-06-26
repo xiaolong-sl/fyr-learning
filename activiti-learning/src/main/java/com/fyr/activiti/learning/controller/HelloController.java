@@ -15,7 +15,7 @@ public class HelloController {
         return "hello";
     }
 
-    @PreAuthorize("@myAccessDecisionService.hasPermission('hello:sayHi')")
+//    @PreAuthorize("@myAccessDecisionService.hasPermission('hello:sayHi')")
     @GetMapping("/sayHi")
     public String sayHi() {
         return "hi";

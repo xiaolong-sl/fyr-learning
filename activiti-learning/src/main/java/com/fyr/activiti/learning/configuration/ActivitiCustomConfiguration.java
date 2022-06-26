@@ -36,8 +36,8 @@ public class ActivitiCustomConfiguration {
         this.transactionManager = transactionManager;
     }
 
-    @Primary
     @Bean
+    @Primary
     public SpringProcessEngineConfiguration springProcessEngineConfiguration() throws IOException {
         System.out.println("=======================");
         SpringProcessEngineConfiguration configuration = new SpringProcessEngineConfiguration();

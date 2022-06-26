@@ -18,6 +18,8 @@
   <modules>
     <module>commons-enhancement</module>
     <module>activiti-learning</module>
+    <module>https</module>
+    <module>file-upload-download</module>
   </modules>
 
   <name>fyr-learning</name>

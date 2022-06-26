@@ -30,14 +30,20 @@
       <version>3.3.0</version>
     </dependency>
     <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20220320</version>
+    </dependency>
+    <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.13.1</version>
     </dependency>
     <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.79</version>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>7.0.3.Final</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.github.ulisesbocchio</groupId>
@@ -45,29 +51,37 @@
       <version>3.0.4</version>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>com.squareup.okhttp3</groupId>
-      <artifactId>okhttp</artifactId>
-      <version>4.9.3</version>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>31.1-jre</version>
+      <scope>compile</scope>
+    </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>mysql</groupId>-->
+    <!--      <artifactId>mysql-connector-java</artifactId>-->
+    <!--      <version>8.0.25</version>-->
+    <!--      <scope>compile</scope>-->
+    <!--    </dependency>-->
+    <dependency>
+      <groupId>org.mariadb.jdbc</groupId>
+      <artifactId>mariadb-java-client</artifactId>
+      <version>3.0.4</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -84,36 +98,6 @@
           <include>**/*.jks</include>
         </includes>
       </resource>
-      <!--      <resource>-->
-      <!--        <directory>.</directory>-->
-      <!--        <includes>-->
-      <!--          <include>META-INF/MANIFEST.MF</include>-->
-      <!--        </includes>-->
-      <!--      </resource>-->
     </resources>
-    <!--    <plugins>-->
-    <!--      <plugin>-->
-    <!--        <groupId>org.apache.maven.plugins</groupId>-->
-    <!--        <artifactId>maven-jar-plugin</artifactId>-->
-    <!--        <configuration>-->
-    <!--          <archive>-->
-    <!--            <index>true</index>-->
-    <!--            <manifest>-->
-    <!--              &lt;!&ndash;              <addClasspath>true</addClasspath>&ndash;&gt;-->
-    <!--              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>-->
-    <!--              <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>-->
-    <!--              <classpathLayoutType>custom</classpathLayoutType>-->
-    <!--            </manifest>-->
-    <!--            <manifestEntries>-->
-    <!--              <url>${project.url}</url>-->
-    <!--              <build-time>${maven.build.timestamp}</build-time>-->
-    <!--              &lt;!&ndash;              <application.title>Commons-Enhancement</application.title>&ndash;&gt;-->
-    <!--              &lt;!&ndash;              <application.version>1.0-SNAPSHOT</application.version>&ndash;&gt;-->
-    <!--            </manifestEntries>-->
-    <!--            <manifestFile>./META-INF/MANIFEST.MF</manifestFile>-->
-    <!--          </archive>-->
-    <!--        </configuration>-->
-    <!--      </plugin>-->
-    <!--    </plugins>-->
   </build>
 </project>

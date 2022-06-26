@@ -1,0 +1,49 @@
+server:
+  port: 8806
+  servlet:
+    context-path: /file-upload-download
+spring:
+  servlet:
+  multipart:
+    enabled: true
+    max-file-size: 10MB
+    max-request-size: 15MB
+  output:
+    ansi:
+      enabled: ALWAYS
+  jackson:
+    serialization:
+      indent-output: true
+  datasource:
+    jdbc-url: jdbc:mariadb://192.168.137.125:3306/employees?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&nullCatalogMeansCurrent=true
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: employees
+    password: employees
+    validationQuery: SELECT 1
+  hikari:
+    minimum-idle: 5
+    maximum-pool-size: 20
+    idle-timeout: 200000
+    max-lifetime: 200000
+    connection-timeout: 50000
+    connection-test-query: SELECT 1
+  jpa:
+    database: MYSQL
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
+
+#  freemarker:
+#    cache: false
+#    charset: UTF-8
+#    check-template-location: true
+#    content-type: text/html
+#    enabled: true
+#    suffix: .ftl
+#    template-loader-path: classpath:/templates/
+

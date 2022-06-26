@@ -1,7 +1,5 @@
 package com.fyr.activiti.learning.entity;
 
-import com.alibaba.excel.annotation.ExcelProperty;
-import com.fyr.activiti.learning.excel.GenderConverter;
 import lombok.Getter;
 import lombok.Setter;
 

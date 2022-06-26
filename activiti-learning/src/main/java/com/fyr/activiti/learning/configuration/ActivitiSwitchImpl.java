@@ -1,6 +1,6 @@
 package com.fyr.activiti.learning.configuration;
 
-import org.assertj.core.util.Strings;
+import com.google.common.base.Strings;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;

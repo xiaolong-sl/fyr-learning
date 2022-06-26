@@ -1,2 +1,0 @@
-Application-title: 0.0.1-SNAPCSHOT
-Application-version: abc

@@ -14,8 +14,6 @@
   <artifactId>activiti-learning</artifactId>
 
   <name>activiti-learning</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,6 +22,11 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>com.fyr.learning.commons</groupId>
+      <artifactId>commons-enhancement</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -44,30 +47,9 @@
       <!--        </exclusion>-->
       <!--      </exclusions>-->
     </dependency>
-    <!--    <dependency>-->
-    <!--      <groupId>junit</groupId>-->
-    <!--      <artifactId>junit</artifactId>-->
-    <!--      <version>4.11</version>-->
-    <!--      <scope>test</scope>-->
-    <!--    </dependency>-->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-jpa</artifactId>
-      <scope>compile</scope>
-    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.25</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -77,15 +59,11 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>3.0.10</version>
       <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>31.1-jre</version>
-      <scope>compile</scope>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -98,30 +76,6 @@
     <!--      <version>2.59.0</version>-->
     <!--      <scope>compile</scope>-->
     <!--    </dependency>-->
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.11.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.groovy</groupId>
-      <artifactId>groovy-all</artifactId>
-      <version>3.0.10</version>
-      <scope>compile</scope>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate.validator</groupId>
-      <artifactId>hibernate-validator</artifactId>
-      <version>7.0.3.Final</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>easyexcel</artifactId>
-      <version>3.0.5</version>
-    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -136,57 +90,57 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
-      <plugin>
-        <groupId>cn.smallbun.screw</groupId>
-        <artifactId>screw-maven-plugin</artifactId>
-        <version>1.0.5</version>
-        <dependencies>
-          <!-- HikariCP -->
+<!--      <plugin>-->
+<!--        <groupId>cn.smallbun.screw</groupId>-->
+<!--        <artifactId>screw-maven-plugin</artifactId>-->
+<!--        <version>1.0.5</version>-->
+<!--        <dependencies>-->
+<!--          &lt;!&ndash; HikariCP &ndash;&gt;-->
 <!--          <dependency>-->
 <!--            <groupId>com.zaxxer</groupId>-->
 <!--            <artifactId>HikariCP</artifactId>-->
 <!--            <version>3.4.5</version>-->
 <!--          </dependency>-->
-          <!--mysql driver-->
-<!--          <dependency>-->
-<!--            <groupId>mysql</groupId>-->
-<!--            <artifactId>mysql-connector-java</artifactId>-->
-<!--            <version>8.0.20</version>-->
-<!--          </dependency>-->
-        </dependencies>
-        <configuration>
-          <!--username-->
-          <username>root</username>
-          <!--password-->
-          <password>password</password>
-          <!--driver-->
-          <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
-          <!--jdbc url-->
-          <jdbcUrl>jdbc:mysql://127.0.0.1:3306/xxxx</jdbcUrl>
-          <!--生成文件类型-->
-          <fileType>HTML</fileType>
-          <!--打开文件输出目录-->
-          <openOutputDir>false</openOutputDir>
-          <!--生成模板-->
-          <produceType>freemarker</produceType>
-          <!--文档名称 为空时:将采用[数据库名称-描述-版本号]作为文档名称-->
-          <fileName>测试文档名称</fileName>
-          <!--描述-->
-          <description>数据库文档生成</description>
-          <!--版本-->
-          <version>${project.version}</version>
-          <!--标题-->
-          <title>数据库文档</title>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>compile</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+<!--          &lt;!&ndash;mysql driver&ndash;&gt;-->
+<!--&lt;!&ndash;          <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>mysql</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>mysql-connector-java</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>8.0.20</version>&ndash;&gt;-->
+<!--&lt;!&ndash;          </dependency>&ndash;&gt;-->
+<!--        </dependencies>-->
+<!--        <configuration>-->
+<!--          &lt;!&ndash;username&ndash;&gt;-->
+<!--          <username>root</username>-->
+<!--          &lt;!&ndash;password&ndash;&gt;-->
+<!--          <password>password</password>-->
+<!--          &lt;!&ndash;driver&ndash;&gt;-->
+<!--          <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>-->
+<!--          &lt;!&ndash;jdbc url&ndash;&gt;-->
+<!--          <jdbcUrl>jdbc:mysql://127.0.0.1:3306/xxxx</jdbcUrl>-->
+<!--          &lt;!&ndash;生成文件类型&ndash;&gt;-->
+<!--          <fileType>HTML</fileType>-->
+<!--          &lt;!&ndash;打开文件输出目录&ndash;&gt;-->
+<!--          <openOutputDir>false</openOutputDir>-->
+<!--          &lt;!&ndash;生成模板&ndash;&gt;-->
+<!--          <produceType>freemarker</produceType>-->
+<!--          &lt;!&ndash;文档名称 为空时:将采用[数据库名称-描述-版本号]作为文档名称&ndash;&gt;-->
+<!--          <fileName>测试文档名称</fileName>-->
+<!--          &lt;!&ndash;描述&ndash;&gt;-->
+<!--          <description>数据库文档生成</description>-->
+<!--          &lt;!&ndash;版本&ndash;&gt;-->
+<!--          <version>${project.version}</version>-->
+<!--          &lt;!&ndash;标题&ndash;&gt;-->
+<!--          <title>数据库文档</title>-->
+<!--        </configuration>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <phase>compile</phase>-->
+<!--            <goals>-->
+<!--              <goal>run</goal>-->
+<!--            </goals>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
     </plugins>
   </build>
 </project>
